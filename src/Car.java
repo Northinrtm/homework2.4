@@ -1,4 +1,4 @@
-public class Car {
+public class Car implements Competing {
     private String brand, model;
     private float engineVolume;
 
@@ -38,5 +38,20 @@ public class Car {
 
     void moveEnd() {
         System.out.println("закончить движение");
+    }
+
+    @Override
+    public void bestLapTime(String s) {
+        System.out.println(s);
+    }
+
+    @Override
+    public void pitStop(String s) {
+        System.out.println(s);
+    }
+
+    @Override
+    public void maxSpeed(String s) {
+        System.out.println(s);
     }
 }
