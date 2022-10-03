@@ -41,6 +41,11 @@ public class Car implements Competing {
     }
 
     @Override
+    public String toString() {
+        return brand + " " + model;
+    }
+
+    @Override
     public void bestLapTime(String s) {
         System.out.println(s);
     }
