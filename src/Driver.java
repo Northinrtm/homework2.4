@@ -1,7 +1,28 @@
-public class Driver {
+public class Driver<T extends Car> {
+    private T car;
+
+    public T getCar() {
+        return car;
+    }
+
+    public void setCar(T car) {
+        if (car != null) {
+            this.car = (T) car;
+        } else {
+            this.car = (T) new Car(null, null, 0.0f);
+        }
+    }
+
     private String name;
     private boolean driverLicense;
     private int drivingExperience;
+
+    public <T extends Car>Driver(String name, boolean driverLicense, int drivingExperience, T car) {
+        setName(name);
+        setDriverLicense(driverLicense);
+        setDrivingExperience(drivingExperience);
+        setCar(car);
+    }
 
     public String getName() {
         return name;
@@ -36,14 +57,18 @@ public class Driver {
     }
 
     void moveStart() {
-        System.out.println("начать движение");
+        car.moveStart();
     }
 
     void moveEnd() {
-        System.out.println("закончить движение");
+        car.moveEnd();
     }
 
     void refill() {
-        System.out.println("заправить авто");
+        System.out.println("заправить " + car);
+    }
+
+    void participation() {
+        System.out.println("водитель " + name + " управляет автомобилем " + car + " и будет участвовать в заезде");
     }
 }

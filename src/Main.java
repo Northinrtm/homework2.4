@@ -1,15 +1,4 @@
 public class Main {
-    void participation(Driver d, Car c) {
-        if ((d.getClass() == DriverA.class) && (c.getClass() == CarLight.class)) {
-            System.out.println("водитель " + d.getName() + " управляет автомобилем " + c + " и будет участвовать в заезде");
-        }
-        if ((d.getClass() == DriverB.class) && (c.getClass() == CarCargo.class)) {
-            System.out.println("водитель " + d.getName() + " управляет автомобилем " + c + " и будет участвовать в заезде");
-        }
-        if ((d.getClass() == DriverD.class) && (c.getClass() == Bus.class)) {
-            System.out.println("водитель " + d.getName() + " управляет автомобилем " + c + " и будет участвовать в заезде");
-        }
-    }
 
     public static void main(String[] args) {
         CarLight carLight = new CarLight("toyota", "a1", 1.5f);
@@ -27,17 +16,8 @@ public class Main {
         Bus bus2 = new Bus("Икарус", "12e", 2.6f);
         Bus bus3 = new Bus("Kamaz", "511", 2.5f);
 
-        DriverA a = new DriverA();
-        a.setName("Богдан");
-        DriverB b = new DriverB();
-        b.setName("Артур");
-        DriverD d = new DriverD();
-        d.setName("Петр");
+        Driver<CarCargo> dcargo = new Driver("Артур",true, 10, carLight1);
+        dcargo.participation();
 
-        Main m = new Main();
-        m.participation(a,carLight2);
-        m.participation(b,carCargo);
-        m.participation(d,bus);
-        m.participation(a, bus);
     }
 }
