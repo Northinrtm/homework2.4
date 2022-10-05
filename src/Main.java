@@ -16,8 +16,9 @@ public class Main {
         Bus bus2 = new Bus("Икарус", "12e", 2.6f);
         Bus bus3 = new Bus("Kamaz", "511", 2.5f);
 
-        Driver<CarCargo> dcargo = new Driver("Артур",true, 10, carLight1);
-        dcargo.participation();
-
+        Driver<CarCargo> dcargo = new Driver<>("Артур",true, 10, carCargo1);
+            dcargo.refill();
+            dcargo.participation();
+            dcargo.moveStart();
     }
 }

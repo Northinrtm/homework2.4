@@ -1,8 +1,8 @@
 public interface Competing {
 
-    void pitStop(String s);
+    void pitStop();
 
-    void bestLapTime(String s);
+    void bestLapTime();
 
-    void maxSpeed(String s);
+    void maxSpeed();
 }

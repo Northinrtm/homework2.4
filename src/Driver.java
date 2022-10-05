@@ -6,23 +6,20 @@ public class Driver<T extends Car> {
     }
 
     public void setCar(T car) {
-        if (car != null) {
-            this.car = (T) car;
-        } else {
-            this.car = (T) new Car(null, null, 0.0f);
-        }
+        this.car = car;
     }
 
     private String name;
     private boolean driverLicense;
     private int drivingExperience;
 
-    public <T extends Car>Driver(String name, boolean driverLicense, int drivingExperience, T car) {
+    public Driver(String name, boolean driverLicense, int drivingExperience, T car) {
         setName(name);
         setDriverLicense(driverLicense);
         setDrivingExperience(drivingExperience);
         setCar(car);
     }
+
 
     public String getName() {
         return name;
@@ -65,7 +62,7 @@ public class Driver<T extends Car> {
     }
 
     void refill() {
-        System.out.println("заправить " + car);
+        car.refill();
     }
 
     void participation() {
